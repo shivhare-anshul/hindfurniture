@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindfurniture - Premium Furniture Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-links">
+                        <a href="#">Sell on Hindfurniture</a>
+                        <a href="#">Become a Franchisee</a>
+                        <a href="#">Buy in Bulk</a>
+                        <a href="#">Gift Cards</a>
+                    </div>
+                    <div class="top-actions">
+                        <a href="#contact-us">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-text">Hindfurniture</span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search for furniture, decor, and more..." class="search-input" onkeyup="handleSearch(event)">
+                        <button class="search-btn" onclick="performSearch()">🔍</button>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="#" class="nav-icon" title="Find a Store">📍</a>
+                        <a href="#" class="nav-icon" title="Wishlist">❤️</a>
+                        <button class="cart-btn" onclick="openCart()">
+                            🛒 Cart (<span class="cart-count">0</span>)
+                        </button>
+                        <button class="signup-btn">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <div class="container">
+                <div class="category-links">
+                    <a href="#furniture">Furniture</a>
+                    <a href="#sofas">Sofas & Seating</a>
+                    <a href="#mattresses">Mattresses</a>
+                    <a href="#decor">Home Decor</a>
+                    <a href="#furnishings">Furnishings</a>
+                    <a href="#lighting">Lamps & Lighting</a>
+                    <a href="#kitchen">Kitchen & Dining</a>
+                    <a href="#luxury">Luxury</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">🎉 New Arrivals</div>
+            <h1 class="hero-title">Transform Your Home with Premium Furniture</h1>
+            <p class="hero-subtitle">Discover stylish, durable furniture for every room. Shop now and get up to 40% off on selected items!</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="scrollToProducts()">Shop Now</button>
+                <button class="btn-secondary">Explore Collections</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">🪑</div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeProductModal()">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products-section" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Furniture</h2>
+                <p class="section-subtitle">Handpicked collections for your home</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product Card 1 - Sofa 1 -->
+                <div class="product-card" data-product-id="1" onclick="showProductDetails(1)">
+                    <div class="product-badge">BESTSELLER</div>
+                    <div class="product-image">
+                        <img src="Images/Sofa/Sofa.jpeg" alt="Premium Sofa" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">🛋️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Fabric Sofa</h3>
+                        <p class="product-description">Elegant and comfortable sofa perfect for your living room</p>
+                        <div class="product-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 - Sofa 2 -->
+                <div class="product-card" data-product-id="2" onclick="showProductDetails(2)">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-image">
+                        <img src="Images/Sofa/Sofa2.jpeg" alt="Modern Sofa" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">🛋️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Modern 3-Seater Sofa</h3>
+                        <p class="product-description">Contemporary design with premium comfort</p>
+                        <div class="product-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 - Sofa 3 -->
+                <div class="product-card" data-product-id="3" onclick="showProductDetails(3)">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product-image">
+                        <img src="Images/Sofa/Sofa3.jpeg" alt="Luxury Sofa" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">🛋️</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Luxury Sectional Sofa</h3>
+                        <p class="product-description">Spacious and stylish for modern homes</p>
+                        <div class="product-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 - Chair -->
+                <div class="product-card" data-product-id="4" onclick="showProductDetails(4)">
+                    <div class="product-badge">HOT</div>
+                    <div class="product-image">
+                        <img src="Images/Chairs/Chair.jpeg" alt="Comfortable Chair" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">🪑</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Comfort Chair</h3>
+                        <p class="product-description">Ergonomic design with excellent support</p>
+                        <div class="product-rating">⭐⭐⭐⭐⭐ (4.7)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 - Shoe Rack -->
+                <div class="product-card" data-product-id="5" onclick="showProductDetails(5)">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-image">
+                        <img src="Images/Shoe_Rack/Shoe_Rack.jpeg" alt="Shoe Rack" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">👟</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Modern Shoe Rack</h3>
+                        <p class="product-description">Organize your footwear with style</p>
+                        <div class="product-rating">⭐⭐⭐⭐ (4.6)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 - Almira/Wardrobe -->
+                <div class="product-card" data-product-id="6" onclick="showProductDetails(6)">
+                    <div class="product-badge">BESTSELLER</div>
+                    <div class="product-image">
+                        <img src="Images/Almira/Almira.jpeg" alt="Wardrobe" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display:none;">🪟</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Spacious Wardrobe</h3>
+                        <p class="product-description">Ample storage with elegant design</p>
+                        <div class="product-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                        <div class="product-footer">
+                            <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
+                                Contact Information
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch with us for any queries or support</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone Number</h3>
+                            <a href="tel:+919411774345" class="contact-link">+91 9411774345</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email Address</h3>
+                            <a href="mailto:soumyarawat51@gmail.com" class="contact-link">soumyarawat51@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📷</div>
+                        <div class="contact-details">
+                            <h3>Instagram</h3>
+                            <a href="https://instagram.com/soumya_rawat__" target="_blank" rel="noopener noreferrer" class="contact-link">@soumya_rawat__</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📘</div>
+                        <div class="contact-details">
+                            <h3>Facebook</h3>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-link">Visit our Facebook page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" onclick="closeCart()"></div>
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart-btn" onclick="closeCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">🛒</div>
+                    <p>Your cart is empty</p>
+                    <p class="empty-cart-hint">Add some furniture to get started!</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span class="total-label">Items:</span>
+                    <span class="total-amount" id="cartTotal">0 items</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Contact for Pricing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hindfurniture</h3>
+                    <p>Your one-stop destination for premium furniture and home decor. Transform your space with style.</p>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <a href="#furniture">Furniture</a>
+                    <a href="#sofas">Sofas & Seating</a>
+                    <a href="#mattresses">Mattresses</a>
+                    <a href="#decor">Home Decor</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <a href="#contact-us">Contact Us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Returns & Refunds</a>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hindfurniture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
