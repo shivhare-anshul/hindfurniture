@@ -67,10 +67,20 @@ function submitInquiryForm(event) {
     ).join('\n');
     
     // Build product link
-    const productLink = window.location.origin + window.location.pathname.replace('index.html', '').replace('category.html', '') + 
-                       (window.location.pathname.includes('category.html') ? 
-                        window.location.pathname + window.location.search : 
-                        `category.html?cat=${product.category}`);
+    let productLink = '';
+    if (window.location.pathname.includes('category.html')) {
+        productLink = window.location.origin + window.location.pathname + window.location.search;
+    } else {
+        productLink = window.location.origin + window.location.pathname.replace('index.html', '') + 
+                     `category.html?cat=${product.category}`;
+    }
+    
+    // Log for testing
+    console.log('=== INQUIRY FORM SUBMISSION ===');
+    console.log('Product:', product.name);
+    console.log('Customer:', formData.name);
+    console.log('Email:', formData.email);
+    console.log('Product Link:', productLink);
     
     // Build email body
     const emailBody = `Hi Team,
@@ -145,13 +155,32 @@ Thank you!`;
         }
     } catch (error) {
         console.log('Using mailto fallback:', error);
+        console.log('Email Subject:', emailSubject);
+        console.log('Email Body:', emailBody);
+        console.log('Recipient:', recipientEmail);
+        
         // Fallback: Use mailto link
         const mailtoSubject = encodeURIComponent(emailSubject);
         const mailtoBody = encodeURIComponent(emailBody);
-        window.location.href = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+        const mailtoLink = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
         
-        alert('Thank you! Your email client will open. Please send the email to complete your inquiry. Our executive will contact you soon.');
-        closeInquiryForm();
+        console.log('Mailto Link:', mailtoLink);
+        
+        // Show email preview in console for testing
+        console.log('\n=== EMAIL PREVIEW ===');
+        console.log('To:', recipientEmail);
+        console.log('Subject:', emailSubject);
+        console.log('\nBody:\n', emailBody);
+        console.log('===================\n');
+        
+        // Try to open mailto
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        setTimeout(() => {
+            alert('Thank you! Your email client should open with a pre-filled email.\n\nIf it doesn\'t open, check the browser console for the email details.\n\nOur executive will contact you soon!');
+            closeInquiryForm();
+        }, 100);
     } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;

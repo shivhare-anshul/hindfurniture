@@ -1,0 +1,44 @@
+========================================
+SAMPLE EMAIL OUTPUT (Generated Format)
+========================================
+
+TO: shivhareanshul78@gmail.com
+SUBJECT: New Inquiry for Premium Fabric Sofa - John Doe
+
+========================================
+EMAIL BODY:
+========================================
+
+Hi Team,
+
+A customer has shown interest in the following product:
+
+Product Name: Premium Fabric Sofa
+Product Subtitle: Elegant and comfortable sofa perfect for your living room
+Product Description: Transform your living room with this elegant premium fabric sofa featuring luxurious upholstery and plush cushioning. Designed for maximum comfort and style, this sofa combines contemporary aesthetics with exceptional durability. The premium fabric is soft to touch yet resistant to wear, making it perfect for daily use. The deep seating and supportive cushions provide ultimate relaxation for family gatherings, entertaining guests, or simply unwinding after a long day. The sturdy frame ensures years of reliable use while maintaining its elegant appearance.
+
+Product Specifications:
+Material: Premium Fabric, High-Density Foam, Solid Wood Frame
+Seating Capacity: 3-4 People
+Style: Modern Contemporary
+Cushion Type: Plush, Removable
+Frame: Solid Wood Construction
+Warranty: 2 Years
+Maintenance: Easy to Clean
+Color Options: Available in Multiple Colors
+
+Product Link: http://localhost:8001/category.html?cat=sofas
+
+Customer Details:
+Name: John Doe
+Mobile Number: +91 9876543210
+Email Address: john.doe@example.com
+City: Bangalore
+
+Please contact the customer soon to understand their requirements and provide assistance.
+
+Thank you!
+
+========================================
+END OF EMAIL
+========================================

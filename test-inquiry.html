@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Inquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        button {
+            background: #8B6914;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #6B5010;
+        }
+        .email-preview {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Inquiry Form Test</h1>
+        <p>This page tests the inquiry form email generation.</p>
+        
+        <div class="test-section">
+            <h2>Test Data</h2>
+            <p><strong>Product:</strong> Premium Fabric Sofa (ID: 1)</p>
+            <p><strong>Customer Name:</strong> Test User</p>
+            <p><strong>Mobile:</strong> +91 9876543210</p>
+            <p><strong>Email:</strong> test@example.com</p>
+            <p><strong>City:</strong> Bangalore</p>
+            <p><strong>Recipient Email:</strong> shivhareanshul78@gmail.com</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>Actions</h2>
+            <button onclick="testEmailGeneration()">Generate Test Email</button>
+            <button onclick="testMailtoLink()">Test Mailto Link</button>
+            <button onclick="openInquiryForm()">Open Inquiry Form (from main site)</button>
+        </div>
+        
+        <div id="emailPreview" class="test-section" style="display: none;">
+            <h2>Generated Email Preview</h2>
+            <div id="emailContent" class="email-preview"></div>
+        </div>
+    </div>
+
+    <script>
+        // Sample product data (matching script.js structure)
+        const testProduct = {
+            name: 'Premium Fabric Sofa',
+            subtitle: 'Elegant and comfortable sofa perfect for your living room',
+            description: 'Transform your living room with this elegant premium fabric sofa featuring luxurious upholstery and plush cushioning. Designed for maximum comfort and style, this sofa combines contemporary aesthetics with exceptional durability.',
+            category: 'sofas',
+            specs: {
+                'Material': 'Premium Fabric, High-Density Foam, Solid Wood Frame',
+                'Seating Capacity': '3-4 People',
+                'Style': 'Modern Contemporary',
+                'Cushion Type': 'Plush, Removable',
+                'Frame': 'Solid Wood Construction',
+                'Warranty': '2 Years',
+                'Maintenance': 'Easy to Clean',
+                'Color Options': 'Available in Multiple Colors'
+            }
+        };
+
+        const testFormData = {
+            name: 'Test User',
+            mobile: '+91 9876543210',
+            email: 'test@example.com',
+            city: 'Bangalore'
+        };
+
+        function testEmailGeneration() {
+            const specsText = Object.entries(testProduct.specs).map(([key, value]) => 
+                `${key}: ${value}`
+            ).join('\n');
+            
+            const productLink = window.location.origin + '/category.html?cat=' + testProduct.category;
+            
+            const emailBody = `Hi Team,
+
+A customer has shown interest in the following product:
+
+Product Name: ${testProduct.name}
+Product Subtitle: ${testProduct.subtitle}
+Product Description: ${testProduct.description}
+
+Product Specifications:
+${specsText}
+
+Product Link: ${productLink}
+
+Customer Details:
+Name: ${testFormData.name}
+Mobile Number: ${testFormData.mobile}
+Email Address: ${testFormData.email}
+City: ${testFormData.city}
+
+Please contact the customer soon to understand their requirements and provide assistance.
+
+Thank you!`;
+
+            const emailSubject = `New Inquiry for ${testProduct.name} - ${testFormData.name}`;
+            const recipientEmail = 'shivhareanshul78@gmail.com';
+            
+            // Display preview
+            const preview = document.getElementById('emailPreview');
+            const content = document.getElementById('emailContent');
+            preview.style.display = 'block';
+            
+            content.textContent = `TO: ${recipientEmail}\nSUBJECT: ${emailSubject}\n\n${emailBody}`;
+            
+            // Log to console
+            console.log('=== TEST EMAIL GENERATION ===');
+            console.log('To:', recipientEmail);
+            console.log('Subject:', emailSubject);
+            console.log('Body:', emailBody);
+            console.log('============================');
+            
+            alert('Email preview generated! Check the preview section below and browser console.');
+        }
+
+        function testMailtoLink() {
+            const specsText = Object.entries(testProduct.specs).map(([key, value]) => 
+                `${key}: ${value}`
+            ).join('\n');
+            
+            const productLink = window.location.origin + '/category.html?cat=' + testProduct.category;
+            
+            const emailBody = `Hi Team,
+
+A customer has shown interest in the following product:
+
+Product Name: ${testProduct.name}
+Product Subtitle: ${testProduct.subtitle}
+Product Description: ${testProduct.description}
+
+Product Specifications:
+${specsText}
+
+Product Link: ${productLink}
+
+Customer Details:
+Name: ${testFormData.name}
+Mobile Number: ${testFormData.mobile}
+Email Address: ${testFormData.email}
+City: ${testFormData.city}
+
+Please contact the customer soon to understand their requirements and provide assistance.
+
+Thank you!`;
+
+            const emailSubject = `New Inquiry for ${testProduct.name} - ${testFormData.name}`;
+            const recipientEmail = 'shivhareanshul78@gmail.com';
+            
+            const mailtoSubject = encodeURIComponent(emailSubject);
+            const mailtoBody = encodeURIComponent(emailBody);
+            const mailtoLink = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+            
+            console.log('Mailto Link:', mailtoLink);
+            
+            // Try to open mailto
+            window.location.href = mailtoLink;
+            
+            alert('Mailto link triggered! Your email client should open. If not, check browser console for the link.');
+        }
+
+        function openInquiryForm() {
+            window.location.href = 'http://localhost:8001/index.html';
+            setTimeout(() => {
+                alert('Opening main site. Click "Get Quote" on any product to test the form.');
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+=== INQUIRY FORM TEST OUTPUT ===
+
+Test Product: Premium Fabric Sofa
+Test Customer: Test User
+Test Email: test@example.com
+Test Mobile: +91 9876543210
+Test City: Bangalore
+
+Expected Email Format:
+----------------------
+TO: shivhareanshul78@gmail.com
+SUBJECT: New Inquiry for Premium Fabric Sofa - Test User
+
+Hi Team,
+
+A customer has shown interest in the following product:
+
+Product Name: Premium Fabric Sofa
+Product Subtitle: Elegant and comfortable sofa perfect for your living room
+Product Description: [Full description]
+
+Product Specifications:
+Material: Premium Fabric, High-Density Foam, Solid Wood Frame
+Seating Capacity: 3-4 People
+Style: Modern Contemporary
+[All other specs...]
+
+Product Link: [Link to product page]
+
+Customer Details:
+Name: Test User
+Mobile Number: +91 9876543210
+Email Address: test@example.com
+City: Bangalore
+
+Please contact the customer soon to understand their requirements and provide assistance.
+
+Thank you!
+----------------------
+
+To test:
+1. Open http://localhost:8001/test-inquiry.html
+2. Click "Generate Test Email" to see preview
+3. Click "Test Mailto Link" to test email client opening
+4. Or go to http://localhost:8001/ and click "Get Quote" on any product
