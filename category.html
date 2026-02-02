@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindfurniture - Category</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#contact-us">Contact Us</a>
+                    </div>
+                    <div class="top-actions">
+                        <a href="index.html#contact-us">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">Hindfurniture</span>
+                        </a>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search for furniture, decor, and more..." class="search-input" onkeyup="handleSearch(event)">
+                        <button class="search-btn" onclick="performSearch()">🔍</button>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="index.html" class="nav-icon" title="Home">🏠</a>
+                        <button class="cart-btn" onclick="openCart()">
+                            🛒 Cart (<span class="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <div class="container">
+                <div class="category-links">
+                    <a href="category.html?cat=furniture">Furniture</a>
+                    <a href="category.html?cat=sofas">Sofas & Seating</a>
+                    <a href="category.html?cat=mattresses">Mattresses</a>
+                    <a href="category.html?cat=bed">Bed</a>
+                    <a href="category.html?cat=decor">Home Decor</a>
+                    <a href="category.html?cat=furnishings">Furnishings</a>
+                    <a href="category.html?cat=lighting">Lamps & Lighting</a>
+                    <a href="category.html?cat=kitchen">Kitchen & Dining</a>
+                    <a href="category.html?cat=luxury">Luxury</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Products Section -->
+    <section id="category-section" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="categoryTitle">Category Products</h2>
+                <p class="section-subtitle" id="categorySubtitle">Browse our collection</p>
+            </div>
+
+            <div class="products-grid" id="categoryProductsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            
+            <div id="noProductsMessage" style="display: none; text-align: center; padding: 3rem; color: #666;">
+                <p style="font-size: 1.2rem;">No products found in this category.</p>
+                <a href="index.html" style="color: #8B6914; text-decoration: underline;">Browse all products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeProductModal()">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" onclick="closeCart()"></div>
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart-btn" onclick="closeCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">🛒</div>
+                    <p>Your cart is empty</p>
+                    <p class="empty-cart-hint">Add some furniture to get started!</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span class="total-label">Items:</span>
+                    <span class="total-amount" id="cartTotal">0 items</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Contact for Pricing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hindfurniture</h3>
+                    <p>Your one-stop destination for premium furniture and home decor. Transform your space with style.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <a href="category.html?cat=sofas">Sofas & Seating</a>
+                    <a href="category.html?cat=mattresses">Mattresses</a>
+                    <a href="category.html?cat=bed">Bed</a>
+                    <a href="category.html?cat=decor">Home Decor</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <a href="index.html#contact-us">Contact Us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Returns & Refunds</a>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <a href="index.html">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="index.html#contact-us">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hindfurniture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="category.js"></script>
+</body>
+</html>

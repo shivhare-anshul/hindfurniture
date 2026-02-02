@@ -7,6 +7,7 @@ const products = {
         name: 'Premium Fabric Sofa',
         subtitle: 'Elegant and comfortable sofa perfect for your living room',
         image: 'Images/Sofa/Sofa.jpeg',
+        category: 'sofas',
         description: 'Transform your living room with this elegant premium fabric sofa featuring luxurious upholstery and plush cushioning. Designed for maximum comfort and style, this sofa combines contemporary aesthetics with exceptional durability. The premium fabric is soft to touch yet resistant to wear, making it perfect for daily use. The deep seating and supportive cushions provide ultimate relaxation for family gatherings, entertaining guests, or simply unwinding after a long day. The sturdy frame ensures years of reliable use while maintaining its elegant appearance.',
         specs: {
             'Material': 'Premium Fabric, High-Density Foam, Solid Wood Frame',
@@ -23,6 +24,7 @@ const products = {
         name: 'Modern 3-Seater Sofa',
         subtitle: 'Contemporary design with premium comfort',
         image: 'Images/Sofa/Sofa2.jpeg',
+        category: 'sofas',
         description: 'Experience modern luxury with this stunning 3-seater sofa that combines sleek contemporary design with exceptional comfort. The clean lines and elegant silhouette make it a perfect centerpiece for any modern living space. Crafted with attention to detail, this sofa features premium materials that ensure both style and longevity. The comfortable seating and supportive backrest make it ideal for lounging, reading, or watching TV. Its versatile design complements various interior styles, from minimalist to eclectic.',
         specs: {
             'Material': 'Premium Upholstery, High-Quality Foam, Hardwood Frame',
@@ -39,6 +41,7 @@ const products = {
         name: 'Luxury Sectional Sofa',
         subtitle: 'Spacious and stylish for modern homes',
         image: 'Images/Sofa/Sofa3.jpeg',
+        category: 'sofas',
         description: 'Create a luxurious living space with this elegant sectional sofa that offers both style and functionality. This spacious piece is perfect for larger rooms and provides ample seating for family and guests. The sectional design allows for flexible arrangement to suit your space. With premium materials and expert craftsmanship, this sofa offers exceptional comfort and durability. The elegant design and plush cushions make it the perfect spot for relaxation, socializing, or family movie nights.',
         specs: {
             'Material': 'Luxury Fabric, Premium Foam, Reinforced Frame',
@@ -55,6 +58,7 @@ const products = {
         name: 'Premium Comfort Chair',
         subtitle: 'Ergonomic design with excellent support',
         image: 'Images/Chairs/Chair.jpeg',
+        category: 'furnishings',
         description: 'Enhance your comfort with this premium chair designed for both style and ergonomic support. Whether for your office, study, or living room, this chair provides excellent lumbar support and comfortable seating. The elegant design complements any decor while the high-quality materials ensure durability. Perfect for long hours of work or relaxation, this chair promotes proper posture and reduces strain. The sophisticated appearance makes it a beautiful addition to any space.',
         specs: {
             'Material': 'Premium Upholstery, High-Density Foam, Sturdy Frame',
@@ -71,6 +75,7 @@ const products = {
         name: 'Modern Shoe Rack',
         subtitle: 'Organize your footwear with style',
         image: 'Images/Shoe_Rack/Shoe_Rack.jpeg',
+        category: 'furnishings',
         description: 'Keep your entryway organized and clutter-free with this modern shoe rack. Designed with both functionality and aesthetics in mind, this shoe rack provides ample storage space for your footwear collection. The sleek design complements modern interiors while the sturdy construction ensures durability. Perfect for hallways, entryways, or closets, this shoe rack helps maintain a tidy and organized home. The open design allows for easy access to your shoes while keeping them neatly displayed.',
         specs: {
             'Material': 'Durable Wood/MDF Construction',
@@ -87,6 +92,7 @@ const products = {
         name: 'Spacious Wardrobe',
         subtitle: 'Ample storage with elegant design',
         image: 'Images/Almira/Almira.jpeg',
+        category: 'furniture',
         description: 'Maximize your bedroom storage with this spacious and elegant wardrobe. This wardrobe offers extensive storage space for all your clothing, accessories, and personal items. The well-designed interior includes hanging space, shelves, and compartments to keep everything organized. The elegant exterior design adds sophistication to your bedroom while the quality construction ensures years of reliable use. Perfect for organizing your entire wardrobe in one convenient location.',
         specs: {
             'Material': 'Premium Wood/MDF Construction',
