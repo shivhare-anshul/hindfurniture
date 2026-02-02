@@ -149,6 +149,9 @@ function displayCategoryProducts(category) {
                         <button class="contact-info-btn" onclick="event.stopPropagation(); scrollToContact()">
                             Contact Information
                         </button>
+                        <button class="inquiry-btn" onclick="event.stopPropagation(); openInquiryForm(${productId})">
+                            Get Quote
+                        </button>
                     </div>
                 </div>
             </div>

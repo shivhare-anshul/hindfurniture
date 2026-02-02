@@ -338,6 +338,7 @@ function showProductDetails(productId) {
         </div>
         <div class="modal-product-footer">
             <button class="modal-contact-btn" onclick="closeProductModal(); scrollToContact();">Contact for Information</button>
+            <button class="modal-inquiry-btn" onclick="closeProductModal(); openInquiryForm(${productId});">Get Quote</button>
         </div>
     `;
     

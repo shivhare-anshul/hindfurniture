@@ -95,6 +95,51 @@
         </div>
     </div>
 
+    <!-- Product Inquiry Form Modal -->
+    <div class="inquiry-modal" id="inquiryModal">
+        <div class="modal-overlay" onclick="closeInquiryForm()"></div>
+        <div class="modal-content inquiry-form-content">
+            <button class="close-modal-btn" onclick="closeInquiryForm()">×</button>
+            <div class="inquiry-form-body">
+                <h2 class="inquiry-form-title">Product Inquiry</h2>
+                <p class="inquiry-form-subtitle">Fill in your details and our executive will contact you soon!</p>
+                <form id="inquiryForm" onsubmit="submitInquiryForm(event)">
+                    <input type="hidden" id="inquiryProductId" name="productId">
+                    <input type="hidden" id="inquiryProductName" name="productName">
+                    
+                    <div class="form-group">
+                        <label for="inquiryName">Name *</label>
+                        <input type="text" id="inquiryName" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiryMobile">Mobile Number *</label>
+                        <input type="tel" id="inquiryMobile" name="mobile" required placeholder="+91 1234567890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiryEmail">Email Address *</label>
+                        <input type="email" id="inquiryEmail" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiryCity">City *</label>
+                        <input type="text" id="inquiryCity" name="city" required placeholder="Enter your city">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiryProduct">Product Interested In</label>
+                        <input type="text" id="inquiryProduct" name="product" readonly>
+                    </div>
+                    
+                    <button type="submit" class="submit-inquiry-btn" id="submitInquiryBtn">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Shopping Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-overlay" onclick="closeCart()"></div>
@@ -154,7 +199,10 @@
         </div>
     </footer>
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
     <script src="category.js"></script>
+    <script src="inquiry.js"></script>
 </body>
 </html>
